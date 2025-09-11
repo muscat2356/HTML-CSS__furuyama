@@ -1,0 +1,205 @@
+/*ロゴのスタイル*/
+.Header__logo img{ 
+   width: 185px;  /* ロゴの幅を固定 */
+   height: auto;  /* 高さは自動で調整し、縦横比を保つ */
+   display: block; /* 一部のブラウザで発生する余白をなくす */
+}
+
+.Header__logo img:hover {
+    opacity: 0.7; /* 薄くなる */
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  padding: 0 50px 0 36px;
+  min-height: 70px;
+  position: relative;
+  z-index: 10;
+  background-position: center;
+
+  box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.05);
+
+}
+
+.Header__right-group{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.Header__nav{
+    display: flex;
+    align-items: center;
+}
+/* ナビゲーションメニューのスタイル */
+.Header__nav-list{
+    display: flex;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Header__nav-item{
+    margin-right:  45px;
+}
+
+
+.Header__nav-link{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Header__nav-link__en{
+    font-size: 12px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    line-height: 12.4px;
+    cursor: pointer;
+}
+
+.Header__nav-link__jp{
+    display: block;
+    font-size: 10px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.Header__nav-link:hover .Header__nav-link__en,
+.Header__nav-link:hover .Header__nav-link__jp {
+    color: #666; /* ホバー時に白へ */
+    transition: color 0.3s ease;
+}
+
+
+.Header__cta{
+    /*文字のサイズとカラー*/
+    font-size: clamp(12px, 2vw, 14px);
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+
+    /*CTAの調整*/
+    background-color: #f7931e;
+    border-radius: 9999px;
+
+    /*余白とサイズの調整*/
+    padding: 12px 20px;
+
+    /*その他の装飾*/
+    text-decoration: none;
+    display: inline-block;
+}
+
+.Header__cta:hover{
+  opacity: 0.8;
+}
+
+/* body の余白をリセット */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,"ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.Main {
+    z-index: 0;
+}
+
+.Main__intro {
+  position: relative; /* 子を絶対配置するための基準 */
+  min-height: 600px;
+}
+
+/* 共通設定 */
+.intro-img {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* 個別画像と位置 */
+.img1 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/left-rectangle.svg"); top: -20px; left: 0; width: 300px; height: 300px; z-index: 1; }
+.img2 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/fill-rectangle.svg"); bottom: -10px; left: -70px; width: 528px; height: 528px; }
+.img3 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/badge.svg"); top: 35%; left: 50%; transform: translate(-50%, -50%); width: 205px; height: 205px;}
+.img4 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/main-visual.webp"); top: -70px; right: 15px; width: 775px; height: 775px; z-index: auto;}
+.img5 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/right-rectangle.svg"); bottom: -70px; right: 2px; width: 360px; height: 360px; }
+
+
+.Main__word{
+    position: absolute;
+    top: 63%;       /* 縦の中央 */
+    left: 22.5%;      /* 横の中央 */
+    transform: translate(0%, -50%); 
+  /* ← X方向の -50% を 0% に変えることで、中央より右寄りにできる */
+  
+    z-index: 10;
+    text-align: left;
+}
+
+header, main {
+  margin: 0;
+  padding: 0;
+}
+main {
+  padding-top: 1px; /* 小さくてもOK */
+}
+
+.Main__intro__word{
+    color: #333;
+    font-family: "Lato", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 63px;
+    margin:0 0 16px 0;
+    text-align: left;
+}
+
+.Main__intro__contact{
+   align-items: center;
+   background-color: #F79214;
+   color: white;
+   border: none;
+   border-radius: 38px;
+   cursor: pointer;
+   display: inline-flex;
+   flex-direction: column;
+   font-size: 16px;
+   font-weight: 600;
+   height: 64px;
+   justify-content: center;
+   text-decoration: none;
+   text-align: center;
+   width: 100%;
+   margin-bottom: 16px;
+   line-height: 1.2;
+} 
+
+.Main__intro__contact:hover{
+  opacity: 0.8;
+}
+
+.Main__intro__detail{
+    line-height: 0.2;
+}
+
+.Main__intro__detail-1{
+    color: #333;
+    font-size: 12px;
+    line-height: 0.3;
+}
+
+.Main__intro__detail-2{
+    color: #333;
+    font-size: 12px;
+}
