@@ -25,6 +25,16 @@
 
 }
 
+.Header__checkbox {
+  display: none; /* チェックボックスは常に非表示 */
+}
+.Header__toggle {
+  display: none; /* ハンバーガーも非表示 */
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
 .Header__right-group{
     margin-left: auto;
     display: flex;
@@ -77,14 +87,14 @@
 
 .Header__nav-link:hover .Header__nav-link__en,
 .Header__nav-link:hover .Header__nav-link__jp {
-    color: #666; /* ホバー時に白へ */
+    color: #666;
     transition: color 0.3s ease;
 }
 
 
 .Header__cta{
     /*文字のサイズとカラー*/
-    font-size: clamp(12px, 2vw, 14px);
+    font-size: 12px;
     color: white;
     font-family: "Lato", sans-serif;
     font-weight: 500;
@@ -104,6 +114,46 @@
 .Header__cta:hover{
   opacity: 0.8;
 }
+
+
+@media (max-width: 1024px) {
+  .Header {
+    flex-wrap: wrap;
+  }
+
+  /* ☰ を表示 */
+  .Header__toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* ナビゲーションをデフォルト非表示 */
+  .Header__right-group {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 10px;
+    gap: 12px;
+  }
+
+  /* チェックONで表示 */
+  .Header__checkbox:checked ~ .Header__right-group {
+    display: flex;
+  }
+
+  .Header__nav-list {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .Header__cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 /* body の余白をリセット */
 body {
@@ -131,20 +181,22 @@ body {
 /* 個別画像と位置 */
 .img1 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/left-rectangle.svg"); top: -20px; left: 0; width: 300px; height: 300px; z-index: 1; }
 .img2 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/fill-rectangle.svg"); bottom: -10px; left: -70px; width: 528px; height: 528px; }
-.img3 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/badge.svg"); top: 35%; left: 50%; transform: translate(-50%, -50%); width: 205px; height: 205px;}
+.img3 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/badge.svg");position: relative; top: 220px; left: 50%; transform: translate(-50%, -50%); width: 205px; height: 205px;z-index: 5;}
 .img4 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/main-visual.webp"); top: -70px; right: 15px; width: 775px; height: 775px; z-index: auto;}
 .img5 { background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/right-rectangle.svg"); bottom: -70px; right: 2px; width: 360px; height: 360px; }
+
 
 
 .Main__word{
     position: absolute;
     top: 63%;       /* 縦の中央 */
-    left: 22.5%;      /* 横の中央 */
+    left: 19.5%;      /* 横の中央 */
     transform: translate(0%, -50%); 
   /* ← X方向の -50% を 0% に変えることで、中央より右寄りにできる */
   
     z-index: 10;
     text-align: left;
+    width: auto;
 }
 
 header, main {
@@ -165,13 +217,17 @@ main {
     text-align: left;
 }
 
+
+
 .Main__intro__contact{
    align-items: center;
    background-color: #F79214;
    color: white;
+
    border: none;
    border-radius: 38px;
    cursor: pointer;
+   
    display: inline-flex;
    flex-direction: column;
    font-size: 16px;
@@ -202,4 +258,41 @@ main {
 .Main__intro__detail-2{
     color: #333;
     font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .Main__word {
+    left: 6%;              /* 左に寄せすぎないように調整 */
+    top: 59%;               /* 少し上に */
+    transform: translate(0, -50%);
+    width: 80%;             /* テキスト幅を広げて収める */
+    text-align: left;
+  }
+  .Main__intro__contact{
+    width: 68%;
+  }
+  .img3{
+    left: 75%;              /* 左に寄せすぎないように調整 */
+    top: 200px;   
+  }
+}
+
+/* スマホ (768px以下) */
+@media (max-width: 768px) {
+  .Main__word {
+     .Main__intro-group {
+    top: 55%;          /* 少し上 */
+    left: 50%;         /* 画面中央 */
+    transform: translate(-50%, -50%);
+    width: 90%;        /* 幅広げる */
+  }
+
+  .Main__intro-group .Main__word {
+    text-align: center;
+  }
+
+  .Main__intro__contact {
+    width: 100%;
+  }
+}
 }
