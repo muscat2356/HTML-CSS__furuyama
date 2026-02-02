@@ -127,7 +127,6 @@
     margin-left: auto;
   }
 
-  /* ナビゲーションをデフォルト非表示 */
   .Header__right-group {
     display: none;
     flex-direction: column;
@@ -154,8 +153,6 @@
   }
 }
 
-
-/* body の余白をリセット */
 body {
   margin: 0;
   padding: 0;
@@ -167,7 +164,7 @@ body {
 }
 
 .Main__intro {
-  position: relative; /* 子を絶対配置するための基準 */
+  position: relative; 
   min-height: 600px;
 }
 
@@ -192,7 +189,6 @@ body {
     top: 63%;       /* 縦の中央 */
     left: 19.5%;      /* 横の中央 */
     transform: translate(0%, -50%); 
-  /* ← X方向の -50% を 0% に変えることで、中央より右寄りにできる */
   
     z-index: 10;
     text-align: left;
@@ -262,37 +258,84 @@ main {
 
 @media (max-width: 1024px) {
   .Main__word {
-    left: 6%;              /* 左に寄せすぎないように調整 */
-    top: 59%;               /* 少し上に */
+    left: 6%;              
+    top: 59%;               
     transform: translate(0, -50%);
-    width: 80%;             /* テキスト幅を広げて収める */
+    width: 80%;             
     text-align: left;
   }
   .Main__intro__contact{
     width: 68%;
   }
   .img3{
-    left: 75%;              /* 左に寄せすぎないように調整 */
+    left: 75%;             
     top: 200px;   
   }
 }
 
 /* スマホ (768px以下) */
 @media (max-width: 768px) {
-  .Main__word {
-     .Main__intro-group {
-    top: 55%;          /* 少し上 */
-    left: 50%;         /* 画面中央 */
-    transform: translate(-50%, -50%);
-    width: 90%;        /* 幅広げる */
-  }
-
-  .Main__intro-group .Main__word {
-    text-align: center;
-  }
-
-  .Main__intro__contact {
-    width: 100%;
-  }
+.Header__logo img{ 
+   width: 150px;  /* ロゴの幅を固定 */
+   height: auto;  
+   display: block; /* 一部のブラウザで発生する余白をなくす */
 }
+   .Main__word{
+    position: static;
+    transform: none;
+    width: auto;
+    margin: 170px 16px 0;
+    font-size: 20px;
+  }
+
+   .Main__intro__contact {
+    width: 100%;
+    height: 56px;
+    font-size: 15px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+  }
+   .Main__intro__word{
+    font-size: 22px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+  }
+    .Main__intro__detail{
+    line-height: 1.4;
+  }
+  .Main__intro__detail-1,
+  .Main__intro__detail-2{
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+  }
+    .img4{
+    width: 80vw;
+    height: 60vw;
+    top: 0;
+    right: -40px;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .img5{
+    display: none;
+  }
+  .img1{
+    width: 30vw;
+    height: 30vw;
+    top: -10px;
+  }
+  .img2{
+    width: 50vw;
+    height: 50vw;
+    left: 10%;
+    top: 20px;
+  }
+ .img3{
+    width: 22vw;
+    height: 22vw;
+    left: 300px;       
+    top: 290px;   
+  }
 }
